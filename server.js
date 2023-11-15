@@ -4,10 +4,10 @@ const http = require('http'),
 
 http.createServer((request, response) => {
     let addr = request.url,
-    q = new url(addr, 'http://localhost:8080'),
+    q = new URL(addr, 'http://localhost:8080'),
     filePath = '';
 
-    fs.appendFile('log.txt', 'URL: ' + addr + '\nTimestamp: ' + new Date().getTime() + '\n\n', (err) => {
+    fs.appendFile('log.txt', 'URL: ' + addr + '\nTimestamp: ' + new Date() + '\n\n', (err) => {
         if (err) {
             console.log(err);
         } else {
