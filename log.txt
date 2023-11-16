@@ -16,3 +16,9 @@ Timestamp: Wed Nov 15 2023 13:59:51 GMT-0500 (Eastern Standard Time)
 URL: /favicon.ico
 Timestamp: Wed Nov 15 2023 13:59:51 GMT-0500 (Eastern Standard Time)
 
+::1 - - [16/Nov/2023:21:11:06 +0000] "GET /documentation.html HTTP/1.1" 200 1310 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [16/Nov/2023:21:11:06 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:3000/documentation.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [16/Nov/2023:21:11:16 +0000] "GET / HTTP/1.1" 200 24 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [16/Nov/2023:21:11:57 +0000] "GET /movies HTTP/1.1" 200 756 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [16/Nov/2023:21:12:04 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [16/Nov/2023:21:12:49 +0000] "GET /do HTTP/1.1" 404 141 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
