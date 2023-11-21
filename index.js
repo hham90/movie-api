@@ -62,6 +62,38 @@ app.get('/movies', (req, res) => {
     res.json(topTenMovies);
 });
 
+app.get('/movies/:moviename', (req, res) => {
+    res.send('MOVIE NAME');
+});
+
+app.get('/movies/:moviename/:genre', (req, res) => {
+    res.send('MOVIES BY GENRE');
+});
+
+app.get('/directors/:name', (req, res) => {
+    res.send('DIRECTOR INFORMATION BY NAME');
+});
+
+app.post('/register', (req, res) => {
+    res.send('REGISTER HERE')
+});
+
+app.put('/users/:username', (req, res) => {
+    res.send('updated username')
+});
+
+app.post('/users/:username/:favorites/:movies', (req, res) => {
+    res.send('favorite movies')
+});
+
+app.delete('/users/:username/:favorites/:movies', (req, res) => {
+    res.send('movie deleted')
+});
+
+app.delete('/users/:username/:deregister', (req, res) => {
+    res.send('account deleted')
+});
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
