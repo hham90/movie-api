@@ -1,30 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Information API</title>
-</head>
-<body>
-    <h1>Technical Requirements</h1>
-<ul>
-    <p>● The API must be a Node.js and Express application.</p>
-    <p>● The API must use REST architecture, with URL endpoints corresponding to the data
-  operations listed above</p>
-    <p>● The API must use at least three middleware modules, such as the body-parser package for
-  reading data from requests and morgan for logging.</p>
-    <p>● The API must use a “package.json” file.</p>
-    <p>● The database must be built using MongoDB.</p>
-    <p>● The business logic must be modeled with Mongoose.</p>
-    <p>● The API must provide movie information in JSON format.</p>
-    <p>● The JavaScript code must be error-free.</p>
-    <p>● The API must be tested in Postman.</p>
-    <p>● The API must include user authentication and authorization code.</p>
-    <p>● The API must include data validation logic.</p>
-    <p>● The API must meet data security regulations.</p>
-    <p>● The API source code must be deployed to a publicly accessible platform like GitHub.</p>
-    <p>● The API must be deployed to Heroku.</p>
-</ul>
+Returns list of movies
+/movies
+GET
 
-</body>
-</html>
+Returns specific movie by name
+/movies/:moviename
+GET
+
+Returns movie's genre
+/movies/:moviename/:genre
+GET
+
+Returns data about director by name
+/directors/:name
+GET
+
+Allows new users to register
+/register
+POST
+
+Allows users to change their username
+/users/:username
+PUT
+
+Allows users to add movies to their favorites list
+/users/favorites/:movies
+POST
+
+Allows users to remove movies from their favorites list
+/users/favorites/:movies
+DELETE
+
+Allows users to deregister from website
+/users/deregister
+DELETE
