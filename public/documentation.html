@@ -3,33 +3,41 @@ Returns list of movies
 GET
 
 Returns specific movie by name
-/movies/:moviename
+/movies/:Title
 GET
 
 Returns movie's genre
-/movies/:moviename/:genre
+/movies/genres/:GenreName
 GET
 
 Returns data about director by name
-/directors/:name
+/directors/:DirectorName
 GET
 
 Allows new users to register
-/register
+/users
 POST
 
-Allows users to change their username
-/users/:username
-PUT
+gets list of all users
+/users
+GET
+
+get users by username
+/users/:Username
+get
+
+Allows users to change their user information
+/users/:Username
+Put
 
 Allows users to add movies to their favorites list
-/users/favorites/:movies
+/users/:Username/movies/:MovieID
 POST
 
 Allows users to remove movies from their favorites list
-/users/favorites/:movies
+/users/:Username/movies/:MovieID
 DELETE
 
 Allows users to deregister from website
-/users/deregister
+/users/:Username
 DELETE
