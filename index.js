@@ -17,7 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-const { check, validationResult } = require('express-validation')
+const { check, validationResult } = require('express-validator')
 
 const cors = require('cors');
 app.use(cors());
@@ -96,8 +96,8 @@ app.get('/movies/directors/:DirectorName', passport.authenticate('jwt', { sessio
 app.post('/users', [
   //validation logic for request
   check('Username', 'Username is required').isLength({min: 5}),
-  check('Username', 'Username contains non alphanumeric characters = not allowed.').isAlphanumeric(),
-  check('Password', 'Password is required').not.isEmpty(),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
 ], async (req, res) => {
   //check validation object for errors
