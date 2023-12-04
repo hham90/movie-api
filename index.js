@@ -10,28 +10,24 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-// mongoose.connect('mongodb://127.0.0.1/test', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
-
-const { check, validationResult } = require('express-validator')
-
 const cors = require('cors');
 app.use(cors());
 let auth = require('./auth')(app);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
+
 const passport = require('passport');
 require('./passport');
+const { check, validationResult } = require('express-validator')
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
 app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(express.static('public'));
-
-let allowedOrigins = ['http://localhost:3000', 'http://testsite.com'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -108,7 +104,7 @@ app.post('/users', [
   }
 
   let hashedPassword = Users.hashPassword(req.body.Password);
-  await Users.findOne({ Username: req.body.Username })
+    await Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
         return res.status(400).send(req.body.Username + ' already exists');
