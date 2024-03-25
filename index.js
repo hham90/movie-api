@@ -12,7 +12,7 @@ const Users = Models.User;
 
 mongoose.connect( process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let allowedOrigins = ['https://ephemeral-marigold-846b92.netlify.app', 'http://localhost:1234', 'https://main--ephemeral-marigold-846b92.netlify.app', 'http://localhost:4200', 'https://hham90.github.io']
+let allowedOrigins = ['https://ephemeral-marigold-846b92.netlify.app', 'http://localhost:1234', 'https://main--ephemeral-marigold-846b92.netlify.app', 'http://localhost:4200', 'https://hham90.github.io', 'https://myflixfe.netlify.app']
 
 const app = express();
 const cors = require('cors');
